@@ -8,7 +8,7 @@ import java.io.File;
 
 /**
  * @description:
- * @author: cn.youyinnn
+ * @author: cn.cn.youyinnn
  * @date: 2017/9/24
  */
 public class YouJetty {
@@ -20,18 +20,41 @@ public class YouJetty {
 
     private YouJetty(){}
 
-    public static YouJetty initServer(int port) {
+    public static YouJetty initServerWithDevelopment(int port) {
 
         server = new Server(port);
 
         webapp = new WebAppContext();
         webapp.setContextPath("/");
+        webapp.setConfigurationDiscovered(true);
+        webapp.setParentLoaderPriority(true);
+        webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
 
         File warFile = new File("src/main/webapp");
 
         webapp.setWar(warFile.getAbsolutePath());
 
         server.setHandler(webapp);
+
+        addAnnotationScanner();
+
+        return youJetty;
+    }
+
+    public static YouJetty initServer(int port, String warPath) {
+
+        server = new Server(port);
+
+        webapp = new WebAppContext();
+        webapp.setContextPath("/");
+        webapp.setConfigurationDiscovered(true);
+        webapp.setParentLoaderPriority(true);
+        webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
+        webapp.setWar(warPath);
+
+        server.setHandler(webapp);
+
+        addAnnotationScanner();
 
         return youJetty;
     }
@@ -45,7 +68,7 @@ public class YouJetty {
         }
     }
 
-    public void addAnnotationScanner(){
+    private static void addAnnotationScanner(){
         Configuration.ClassList classList = Configuration.ClassList.setServerDefault(server);
 
         classList.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration",
@@ -55,6 +78,8 @@ public class YouJetty {
         classList.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration",
                 "org.eclipse.jetty.annotations.AnnotationConfiguration");
 
-        webapp.setExtraClasspath("target/classes");
+        // 前面的路径是idea下的调试路径 后面的路径是发布版本后的class类存放的路径
+        webapp.setExtraClasspath("target/classes,classes");
     }
+
 }

@@ -1,0 +1,1 @@
+java -jar .\JettyWarTest.war .\JettyWarTest.war
