@@ -20,7 +20,7 @@ public class YouJetty {
 
     private YouJetty(){}
 
-    public static YouJetty initServerWithDevelopment(int port) {
+    public static YouJetty initServer(int port,String[] args){
 
         server = new Server(port);
 
@@ -30,27 +30,14 @@ public class YouJetty {
         webapp.setParentLoaderPriority(true);
         webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
 
-        File warFile = new File("src/main/webapp");
+        if (args.length > 0) {
+            webapp.setWar(args[0]);
+        } else {
+            File warFile = new File("src/main/webapp");
 
-        webapp.setWar(warFile.getAbsolutePath());
+            webapp.setWar(warFile.getAbsolutePath());
+        }
 
-        server.setHandler(webapp);
-
-        addAnnotationScanner();
-
-        return youJetty;
-    }
-
-    public static YouJetty initServer(int port, String warPath) {
-
-        server = new Server(port);
-
-        webapp = new WebAppContext();
-        webapp.setContextPath("/");
-        webapp.setConfigurationDiscovered(true);
-        webapp.setParentLoaderPriority(true);
-        webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
-        webapp.setWar(warPath);
 
         server.setHandler(webapp);
 

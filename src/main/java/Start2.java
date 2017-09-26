@@ -24,11 +24,7 @@ public class Start2 {
 
         System.out.println(properties.getProperty("root"));
 
-        if (args.length > 0){
-            youJetty = YouJetty.initServer(8080,args[0]);
-        } else {
-            youJetty = YouJetty.initServerWithDevelopment(8080);
-        }
+        youJetty = YouJetty.initServer(8080, args);
 
         youJetty.startAndJoin();
     }
