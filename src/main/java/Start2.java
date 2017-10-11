@@ -1,7 +1,5 @@
 import cn.youyinnn.youQuickJetty.YouJetty;
-
-import java.io.IOException;
-import java.util.Properties;
+import cn.youyinnn.youQuickJetty.YouProUtils;
 
 /**
  * @description:
@@ -14,17 +12,10 @@ public class Start2 {
 
         YouJetty youJetty;
 
-        Properties properties = new Properties();
+        YouProUtils.load("/conf/root.properties");
+        System.out.println(YouProUtils.get("root"));
 
-        try {
-            properties.load(Start2.class.getResourceAsStream("/conf/root.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(properties.getProperty("root"));
-
-        youJetty = YouJetty.initServer(8080, args);
+        youJetty = YouJetty.initServer(8080,"", args);
 
         youJetty.startAndJoin();
     }

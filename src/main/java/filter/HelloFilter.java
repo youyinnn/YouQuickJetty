@@ -1,6 +1,6 @@
 package filter;
 
-import cn.youyinnn.utils.HttpFilter;
+import cn.youyinnn.youQuickJetty.utils.HttpFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

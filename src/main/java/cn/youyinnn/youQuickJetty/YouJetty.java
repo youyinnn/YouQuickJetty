@@ -20,19 +20,21 @@ public class YouJetty {
 
     private YouJetty(){}
 
-    public static YouJetty initServer(int port,String[] args){
+    public static YouJetty initServer(int port,String contextName,String[] args){
 
         server = new Server(port);
 
         webapp = new WebAppContext();
-        webapp.setContextPath("/");
+        webapp.setContextPath("/"+contextName);
         webapp.setConfigurationDiscovered(true);
         webapp.setParentLoaderPriority(true);
         webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
 
         if (args.length > 0) {
+            // 发布环境
             webapp.setWar(args[0]);
         } else {
+            // idea下的测试环境
             File warFile = new File("src/main/webapp");
 
             webapp.setWar(warFile.getAbsolutePath());
