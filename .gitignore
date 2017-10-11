@@ -3,5 +3,3 @@ src/test/
 target
 src/main/java/filter
 src/main/java/servlet
-src/main/resources
-src/main/webapp
