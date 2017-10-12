@@ -1,4 +1,4 @@
-package cn.youyinnn.youQuickJetty;
+package cn.youyinnn.youQuickJetty.utils;
 
 import java.io.IOException;
 import java.util.Properties;
