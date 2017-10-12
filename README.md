@@ -222,8 +222,25 @@ pom配置：
 
 ![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/1.png)
 
-然后运行`mvn clean package`
+然后运行`mvn clean package`，我们可以得到target目录如图：
 
-然后我们可以得到target目录如图：
+![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/2.png)
 
-我们实际上可以在环境中部署以下文件，即可一件启动web应用！
+这里面我们真正有用的文件只有：
+- classes
+- lib
+- start.bat
+- YouQuickJetty.war
+
+其中start.bat的命令：
+```
+java -jar .\YouQuickJetty.war .\YouQuickJetty.war
+```
+
+我们实际上可以在任何环境中部署以下文件，即可一键启动web应用！
+
+![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/3.png)
+
+![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/4.png)
+
+![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/5.png)
