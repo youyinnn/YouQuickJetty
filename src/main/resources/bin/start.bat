@@ -1,1 +1,1 @@
-java -jar .\JettyWarTest.war .\JettyWarTest.war
+java -jar .\YouQuickJetty.war .\YouQuickJetty.war

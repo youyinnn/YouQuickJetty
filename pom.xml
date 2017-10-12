@@ -5,7 +5,7 @@
     <groupId>cn.youyinnn</groupId>
     <artifactId>YouQuickJetty</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--<packaging>war</packaging>-->
+    <packaging>war</packaging>
 
     <properties>
         <jetty-version>9.4.6.v20170531</jetty-version>

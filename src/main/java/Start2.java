@@ -1,5 +1,5 @@
 import cn.youyinnn.youQuickJetty.YouJetty;
-import cn.youyinnn.youQuickJetty.YouProUtils;
+import cn.youyinnn.youQuickJetty.utils.YouProUtils;
 
 /**
  * @description:
@@ -10,12 +10,10 @@ public class Start2 {
 
     public static void main(String[] args) {
 
-        YouJetty youJetty;
+        YouJetty youJetty = YouJetty.initServer(8080,"", args);
 
         YouProUtils.load("/conf/root.properties");
         System.out.println(YouProUtils.get("root"));
-
-        youJetty = YouJetty.initServer(8080,"", args);
 
         youJetty.startAndJoin();
     }
