@@ -244,3 +244,6 @@ java -jar .\YouQuickJetty.war .\YouQuickJetty.war
 ![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/4.png)
 
 ![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/5.png)
+
+特别看看我们的war包里面，里面的lib和classes都是空的：
+![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/6.png)
