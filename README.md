@@ -221,6 +221,23 @@ pom配置：
 </build>
 ```
 
+然后这是主函数：
+```
+public class Start2 {
+
+    public static void main(String[] args) {
+
+        YouJetty youJetty = YouJetty.initServer(8080,"", args);
+
+        YouProUtils.load("/conf/root.properties");
+        System.out.println(YouProUtils.get("root"));
+
+        youJetty.startAndJoin();
+    }
+
+}
+```
+
 先看看我们在idea下的开发目录结构：
 
 ![](https://github.com/youyinnn/YouQuickJetty/raw/master/screenshots/1.png)
