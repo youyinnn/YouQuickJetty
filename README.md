@@ -17,6 +17,8 @@
 
 使用嵌入式Jetty来快速启动一个Web项目，并且快速部署，在生产环境中的任何地方一键启动项目，并且会陆续集成多种工具类以及工具包。
 
+需要特别声明的是，因为这个工具类是自用的工具类，所以使用了本人所习惯的惯例来减少配置量，所以惯例部分一定要看仔细。
+
 - - -
 
 <span id="架构"/>
@@ -73,6 +75,10 @@
 
 - `package` cn.youyinnn.youQuickJetty
   - `package` utils
+    - `class` ArgsAnalysis
+      ```
+      这是一个对args参数进行简单的存储和分析的工具类
+      ```
     - `class` HttpFilter
       ```
       这是基本的Filter 里面把ServletRequest和ServletResponse转为HttpServletRequest和HttpServletResponse
@@ -93,11 +99,18 @@ YouJetty:
     //代码很简单 没啥说明的 直接看使用案例
 ```
 
+<br>
+
 惯例：
 
-1、项目架构必须为maven的标准架构
+1、项目架构必须为maven的标准架构。
 
-2、webapp在项目下的相对路径为`src/main/webapp`
+2、webapp在项目下的相对路径为`src/main/webapp`。
+
+3、可以接收的参数只有
+  - p : 指定端口号
+  - cn : 指定contextName
+  - wpth : 指定war包的路径
 
 
 - - -
@@ -227,7 +240,7 @@ public class Start2 {
 
     public static void main(String[] args) {
 
-        YouJetty youJetty = YouJetty.initServer(8080,"", args);
+        YouJetty youJetty = YouJetty.initServer(args);
 
         YouProUtils.load("/conf/root.properties");
         System.out.println(YouProUtils.get("root"));
@@ -254,7 +267,7 @@ public class Start2 {
 
 其中start.bat的命令：
 ```
-java -jar .\YouQuickJetty.war .\YouQuickJetty.war
+java -jar .\YouQuickJetty.war -p 8080 -cn YouQuickJetty -wpth ./YouQuickJetty.war
 ```
 
 我们实际上可以在任何环境中部署以下文件，即可一键启动web应用！

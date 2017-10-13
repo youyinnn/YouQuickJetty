@@ -57,8 +57,6 @@ public class YouJetty {
 
         ArgsAnalysis argsAnalysis = new ArgsAnalysis(args, supportCmd);
 
-        System.out.println(argsAnalysis.getCommandValuesMap());
-
         return initServer(
                 argsAnalysis.hasCommand("p") ? Integer.parseInt(argsAnalysis.getValue("p")) : 8080,
                 argsAnalysis.hasCommand("cn") ? argsAnalysis.getValue("cn") : "",
