@@ -1,10 +1,13 @@
 package cn.youyinnn.youQuickJetty;
 
+import cn.youyinnn.youQuickJetty.utils.ArgsAnalysis;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @description:
@@ -20,7 +23,7 @@ public class YouJetty {
 
     private YouJetty(){}
 
-    public static YouJetty initServer(int port,String contextName,String[] args){
+    private static YouJetty initServer(int port, String contextName, String warPath){
 
         server = new Server(port);
 
@@ -30,9 +33,9 @@ public class YouJetty {
         webapp.setParentLoaderPriority(true);
         webapp.setClassLoader(Thread.currentThread().getContextClassLoader());
 
-        if (args.length > 0) {
+        if (warPath != null) {
             // 发布环境
-            webapp.setWar(args[0]);
+            webapp.setWar(warPath);
         } else {
             // idea下的测试环境
             File warFile = new File("src/main/webapp");
@@ -46,6 +49,21 @@ public class YouJetty {
         addAnnotationScanner();
 
         return youJetty;
+    }
+
+    public static YouJetty initServer(String[] args){
+
+        ArrayList<String> supportCmd = new ArrayList<>(Arrays.asList("p","cn","wpth"));
+
+        ArgsAnalysis argsAnalysis = new ArgsAnalysis(args, supportCmd);
+
+        System.out.println(argsAnalysis.getCommandValuesMap());
+
+        return initServer(
+                argsAnalysis.hasCommand("p") ? Integer.parseInt(argsAnalysis.getValue("p")) : 8080,
+                argsAnalysis.hasCommand("cn") ? argsAnalysis.getValue("cn") : "",
+                argsAnalysis.hasCommand("wpth") ? argsAnalysis.getValue("wpth") : null
+        );
     }
 
     public void startAndJoin() {

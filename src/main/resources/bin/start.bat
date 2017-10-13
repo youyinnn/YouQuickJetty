@@ -1,1 +1,1 @@
-java -jar .\YouQuickJetty.war .\YouQuickJetty.war
+java -jar .\YouQuickJetty.war -p 8080 -cn YouQuickJetty -wpth ./YouQuickJetty.war
