@@ -73,13 +73,13 @@
 
 架构总览：
 
-- `package` cn.youyinnn.youQuickJetty
+- `package` cn.youyinnn.youquickjetty
   - `package` utils
     - `class` ArgsAnalysis
       ```
       这是一个对args参数进行简单的存储和分析的工具类
       ```
-    - `class` HttpFilter
+    - `class` BaseHttpFilter
       ```
       这是基本的Filter 里面把ServletRequest和ServletResponse转为HttpServletRequest和HttpServletResponse
       ```

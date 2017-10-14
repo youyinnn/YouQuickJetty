@@ -1,4 +1,4 @@
-package cn.youyinnn.youQuickJetty.utils;
+package cn.youyinnn.youquickjetty.utils;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -8,6 +8,7 @@ import java.util.Properties;
  * @author: youyinnn
  * @date: 2017/9/26
  */
+@SuppressWarnings("ALL")
 public class YouProUtils {
 
     private static Properties properties = new Properties();
@@ -31,7 +32,7 @@ public class YouProUtils {
     }
 
     public static void getSystemProperties(){
-        Properties props=System.getProperties(); //系统属性
+        Properties props= System.getProperties();
         System.out.println("===============================================================================================");
         System.out.println("Java的运行环境版本："+props.getProperty("java.version"));
         System.out.println("Java的运行环境供应商："+props.getProperty("java.vendor"));
@@ -54,9 +55,9 @@ public class YouProUtils {
         System.out.println("操作系统的名称："+props.getProperty("os.name"));
         System.out.println("操作系统的构架："+props.getProperty("os.arch"));
         System.out.println("操作系统的版本："+props.getProperty("os.version"));
-        System.out.println("文件分隔符："+props.getProperty("file.separator"));   //在 unix 系统中是＂／＂
-        System.out.println("路径分隔符："+props.getProperty("path.separator"));   //在 unix 系统中是＂:＂
-        System.out.println("行分隔符："+props.getProperty("line.separator"));   //在 unix 系统中是＂/n＂
+        System.out.println("文件分隔符："+props.getProperty("file.separator"));
+        System.out.println("路径分隔符："+props.getProperty("path.separator"));
+        System.out.println("行分隔符："+props.getProperty("line.separator"));
         System.out.println("用户的账户名称："+props.getProperty("user.name"));
         System.out.println("用户的主目录："+props.getProperty("user.home"));
         System.out.println("用户的当前工作目录："+props.getProperty("user.dir"));

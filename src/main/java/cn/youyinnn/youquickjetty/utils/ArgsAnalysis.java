@@ -1,4 +1,4 @@
-package cn.youyinnn.youQuickJetty.utils;
+package cn.youyinnn.youquickjetty.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class ArgsAnalysis {
     private HashMap<String,String> commandValuesMap = new HashMap<>();
     private ArrayList<String> supportCmd = new ArrayList<>();
 
-    public ArgsAnalysis(String[] args,ArrayList<String> supportCmd) {
+    public ArgsAnalysis(String[] args, ArrayList<String> supportCmd) {
 
         this.supportCmd = supportCmd;
 

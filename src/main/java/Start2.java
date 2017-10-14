@@ -1,5 +1,5 @@
-import cn.youyinnn.youQuickJetty.YouJetty;
-import cn.youyinnn.youQuickJetty.utils.YouProUtils;
+import cn.youyinnn.youquickjetty.YouJetty;
+import cn.youyinnn.youquickjetty.utils.YouProUtils;
 
 /**
  * @description:

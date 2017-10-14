@@ -1,6 +1,6 @@
-package cn.youyinnn.youQuickJetty;
+package cn.youyinnn.youquickjetty;
 
-import cn.youyinnn.youQuickJetty.utils.ArgsAnalysis;
+import cn.youyinnn.youquickjetty.utils.ArgsAnalysis;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
