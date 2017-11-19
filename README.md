@@ -28,7 +28,7 @@
 <span id="依赖"/>
 
 ##### 依赖
-```
+``` xml
         <!-- jetty-server部分 -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -113,7 +113,7 @@ YouJetty:
   - wpth : 指定war包的路径
 
 4、pom文件中用到的一些properties：
-```
+``` xml
     <properties>
         <jetty-version>9.4.6.v20170531</jetty-version>
         <compileVersion>1.8</compileVersion>
@@ -243,7 +243,7 @@ pom配置：
 ```
 
 然后这是主函数：
-```
+``` java
 public class Start2 {
 
     public static void main(String[] args) {
