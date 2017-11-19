@@ -112,7 +112,14 @@ YouJetty:
   - cn : 指定contextName
   - wpth : 指定war包的路径
 
-
+4、pom文件中用到的一些properties：
+```
+    <properties>
+        <jetty-version>9.4.6.v20170531</jetty-version>
+        <compileVersion>1.8</compileVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+```
 - - -
 
 <span id="示例"/>
