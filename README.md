@@ -128,19 +128,19 @@ YouJetty:
 
 1、首先配置好pom文件
 
-让maven可以为我们做这些事：
+主要是使用插件让maven可以为我们做这些事：
 
-- 把编译在war中的classes目录复制到war外边
-- 把集成在war中的lib目录复制到war外边
-- 让maven在打包的时候不打包上面复制的两个目录进war包中
-- 把我们写的启动嵌入式Jetty的main函数所在的类作为war的启动主函数
-- 把外边的classes目录加入到classpath中
-- 把“lib”作为前缀加入到依赖的引用当中
+- 把编译在war中的classes目录复制到war外边（maven-compiler-plugin）
+- 把集成在war中的lib目录复制到war外边（maven-dependency-plugin）
+- 让maven在打包的时候不打包上面复制的两个目录进war包中（maven-war-plugin）
+- 把我们写的启动嵌入式Jetty的main函数所在的类作为war的启动主函数（maven-war-plugin）
+- 把外边的classes目录加入到classpath中（maven-war-plugin）
+- 把“lib”作为前缀加入到依赖的引用当中（maven-war-plugin）
 
 这个时候，我们打包得出的war应该是一个"裸环境"的war包，包内没有class文件以及jar依赖，这些文件我们都复制到外边了。
 
 pom配置：
-```
+``` xml
 <build>
 
     <plugins>
@@ -196,6 +196,7 @@ pom配置：
 
                 <archive>
                     <manifest>
+                        <!-- 这里写入口主函数的全类名 -->
                         <mainClass>Start2</mainClass>
                         <addClasspath>true</addClasspath>
                         <!-- 在所有依赖引用之前加上lib前缀 这样就会引用war包外的lib目录-->

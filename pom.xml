@@ -68,6 +68,7 @@
 
                     <archive>
                         <manifest>
+                            <!-- 这里写入口主函数的全类名 -->
                             <mainClass>Start2</mainClass>
                             <addClasspath>true</addClasspath>
                             <!-- 在所有依赖引用之前加上lib前缀 这样就会引用war包外的lib目录-->
