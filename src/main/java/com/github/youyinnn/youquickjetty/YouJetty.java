@@ -1,6 +1,6 @@
-package cn.youyinnn.youquickjetty;
+package com.github.youyinnn.youquickjetty;
 
-import cn.youyinnn.youquickjetty.utils.ArgsAnalysis;
+import com.github.youyinnn.youquickjetty.utils.ArgsAnalysis;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * @description:
- * @author: cn.cn.youyinnn
- * @date: 2017/9/24
+ * @author: youyinnn
  */
 public class YouJetty {
 
@@ -23,7 +21,7 @@ public class YouJetty {
 
     private YouJetty(){}
 
-    private static YouJetty initServer(int port, String contextName, String warPath){
+    public static YouJetty initServer(int port, String contextName, String warPath){
 
         server = new Server(port);
 
@@ -43,10 +41,7 @@ public class YouJetty {
             webapp.setWar(warFile.getAbsolutePath());
         }
 
-
         server.setHandler(webapp);
-
-        addAnnotationScanner();
 
         return youJetty;
     }
@@ -73,7 +68,7 @@ public class YouJetty {
         }
     }
 
-    private static void addAnnotationScanner(){
+    public static void addAnnotationScanner(){
         Configuration.ClassList classList = Configuration.ClassList.setServerDefault(server);
 
         classList.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration",
