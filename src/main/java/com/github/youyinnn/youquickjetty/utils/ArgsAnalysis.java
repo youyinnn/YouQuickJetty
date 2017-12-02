@@ -1,12 +1,10 @@
-package cn.youyinnn.youquickjetty.utils;
+package com.github.youyinnn.youquickjetty.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * @description:
  * @author: youyinnn
- * @date: 2017/10/13
  */
 public class ArgsAnalysis {
 

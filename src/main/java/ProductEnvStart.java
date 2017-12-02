@@ -1,16 +1,15 @@
-import cn.youyinnn.youquickjetty.YouJetty;
-import cn.youyinnn.youquickjetty.utils.YouProUtils;
+import com.github.youyinnn.youquickjetty.YouJetty;
+import com.github.youyinnn.youquickjetty.utils.YouProUtils;
 
 /**
- * @description:
- * @author: youyinnn
- * @date: 2017/9/24
+ * @author youyinnn
  */
-public class Start2 {
+public class ProductEnvStart {
 
     public static void main(String[] args) {
 
         YouJetty youJetty = YouJetty.initServer(args);
+        YouJetty.addAnnotationScanner();
 
         YouProUtils.load("/conf/root.properties");
         System.out.println(YouProUtils.get("root"));

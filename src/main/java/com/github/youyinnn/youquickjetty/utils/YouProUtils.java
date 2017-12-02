@@ -1,14 +1,11 @@
-package cn.youyinnn.youquickjetty.utils;
+package com.github.youyinnn.youquickjetty.utils;
 
 import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @description:
  * @author: youyinnn
- * @date: 2017/9/26
  */
-@SuppressWarnings("ALL")
 public class YouProUtils {
 
     private static Properties properties = new Properties();
