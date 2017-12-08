@@ -6,6 +6,7 @@ import org.eclipse.jetty.webapp.Configuration;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 import java.io.File;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -62,9 +63,11 @@ public class YouJetty {
     public void startAndJoin() {
         try {
             server.start();
+            System.err.println("YouQuickJetty Project Start on local time : ["+LocalTime.now().withNano(0)+ "]");
             server.join();
         } catch (Exception e) {
             e.printStackTrace();
+            System.err.println("YouQuickJetty Project Start fail on local time : ["+LocalTime.now().withNano(0)+ "]");
         }
     }
 
