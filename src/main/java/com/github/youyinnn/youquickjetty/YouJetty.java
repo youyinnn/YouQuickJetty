@@ -44,6 +44,8 @@ public class YouJetty {
 
         server.setHandler(webapp);
 
+        addAnnotationScanner();
+
         return youJetty;
     }
 
@@ -71,7 +73,7 @@ public class YouJetty {
         }
     }
 
-    public static void addAnnotationScanner(){
+    private static void addAnnotationScanner(){
         Configuration.ClassList classList = Configuration.ClassList.setServerDefault(server);
 
         classList.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration",
