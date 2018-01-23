@@ -5,11 +5,24 @@
 
 - - -
 
-TODO:
+### TODO:
 
 - <del>干脆把基本的Jetty依赖jar包集成到项目里得了</del>（这个点子太蠢了）
 - 热加载（略难）
 - 启动前后方法区提供
+
+- - -
+
+### 使用
+
+maven：
+```xml
+        <dependency>
+            <groupId>com.github.youyinnn</groupId>
+            <artifactId>you-quick-jetty</artifactId>
+            <version>1.0.5.1</version>
+        </dependency>
+```
 
 - - -
 
