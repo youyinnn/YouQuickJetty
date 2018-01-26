@@ -1,5 +1,5 @@
 ## YouQuickJetty
-[![Travis](https://img.shields.io/badge/version-1.0.5.1-green.svg)]()
+[![Travis](https://img.shields.io/badge/version-1.0.5.2-green.svg)]()
 [![Travis](https://img.shields.io/badge/jetty-9.4.6.v20170531-brightgreen.svg)]()
 ##### 这是一个“自用”的嵌入式JettyWeb应用快速启动工具包
 
@@ -20,7 +20,7 @@ maven：
         <dependency>
             <groupId>com.github.youyinnn</groupId>
             <artifactId>you-quick-jetty</artifactId>
-            <version>1.0.5.1</version>
+            <version>1.0.5.2</version>
         </dependency>
 ```
 
