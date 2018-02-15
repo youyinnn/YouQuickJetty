@@ -1,7 +1,8 @@
 ## YouQuickJetty
-[![Travis](https://img.shields.io/badge/version-1.0.5.2-green.svg)]()
+[![Travis](https://img.shields.io/badge/version-1.1-green.svg)]()
 [![Travis](https://img.shields.io/badge/jetty-9.4.6.v20170531-brightgreen.svg)]()
-##### 这是一个“自用”的嵌入式JettyWeb应用快速启动工具包
+
+**这是一个“自用”的嵌入式JettyWeb应用快速启动工具**
 
 - - -
 
@@ -20,7 +21,7 @@ maven：
         <dependency>
             <groupId>com.github.youyinnn</groupId>
             <artifactId>you-quick-jetty</artifactId>
-            <version>1.0.5.2</version>
+            <version>1.1</version>
         </dependency>
 ```
 
@@ -44,8 +45,6 @@ maven：
 
 - 功能：
     - 快速嵌入Jetty到你的项目中
-    - 提供一个BaseHttpFilter 基本就是把请求和响应传为Http的
-    - 提供一个配置文件的加载工具类
 
 - - -
 
@@ -106,14 +105,6 @@ maven：
     - `class` ArgsAnalysis
       ```
       这是一个对args参数进行简单的存储和分析的工具类
-      ```
-    - `class` BaseHttpFilter
-      ```
-      这是基本的Filter 里面把ServletRequest和ServletResponse转为HttpServletRequest和HttpServletResponse
-      ```
-    - `class` YouProUtils
-      ```
-      这是Properties对象以及系统prop的工具类
       ```
   - `class` YouJetty
      ```

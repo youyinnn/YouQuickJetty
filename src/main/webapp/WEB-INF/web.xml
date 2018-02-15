@@ -8,15 +8,6 @@
         <param-name>username</param-name>
         <param-value>123</param-value>
     </context-param>
-    
-    <filter>
-        <filter-name>hello</filter-name>
-        <filter-class>filter.HelloFilter</filter-class>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>hello</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 
 </web-app>
